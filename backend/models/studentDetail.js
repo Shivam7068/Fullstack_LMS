@@ -2,39 +2,153 @@ import mongoose from "mongoose";
 
 
 const otherResponse = new mongoose.Schema({
+    // name: {
+    //     type: String,
+    //     required: [true, "Please enter your name "]
+    // },
+    // guardianName: {
+    //     type: String,
+    //     required: [true, "Please enter your father's Name "]
+    // },
+
+    // district: {
+    //     type: String,
+    //     required: [true, "Please enter your city "]
+    // },
+
+    // state: {
+    //     type: String,
+    //     required: [true, "Please enter your state "]
+    // },
+    // whatsappNumber: {
+    //     type: String,
+    //     required: [true, 'Phone number is required'],
+    //     match: [/^\d{10}$/, 'Phone number must be exactly 10 digits']
+    // },
+
+    // courseSelected: {
+    //     type: String,
+    //     required: [true, "Please Selct Course "]
+    // },
+    // source: {
+    //     type: String,
+    //     required: [true, "Please enter your source "]
+    // },
+    // sourceId: {
+    //     type: String,
+    //     required: [true, "Please enter source Id "]
+    // },
+    // preferredCollege: {
+    //     type: String,
+    //     default:'',
+    //     required: [true, "Please Selct Preffred College "]
+    // },
+    // contactNumber: {
+    //     type: String,
+    //     required: [true, 'Phone number is required'],
+    //     match: [/^\d{10}$/, 'Phone number must be exactly 10 digits']
+    // },
+    // email: {
+    //     type: String,
+    //     required: [true, "Please enter your email "]
+    // },
+    // isMobileVerified: {
+    //     type: Boolean,
+    //     default: false
+    // },
+    // // isEmailVerified: {
+    // //     type: Boolean,
+    // //     default: false
+    // // },
+    // neetScore: {
+    //     type: String,
+    //     required: [false, 'Marks are required'],
+    //     default: ""
+    // },
+    // neetAIR: {
+    //     type: String,
+    //     required: [false, 'Rank is required'],
+    //     default: ""
+    // },
     name: {
         type: String,
         required: [true, "Please enter your name "]
     },
-    whatsappNumber: {
-        type: String,
-        required: [true, 'Phone number is required'],
-        match: [/^\d{10}$/, 'Phone number must be exactly 10 digits']
-    },
-    courseSelected: {
-        type: String,
-        required: [true, "Please Selct Course "]
-    },
-    source: {
-        type: String,
-        required: [true, "Please enter your source "]
-    },
-    sourceId: {
-        type: String,
-        required: [true, "Please enter source Id "]
-    },
-    preffredCollege: {
-        type: String,
-        required: [true, "Please Selct Preffred College "]
-    },
+
     contactNumber: {
         type: String,
         required: [true, 'Phone number is required'],
         match: [/^\d{10}$/, 'Phone number must be exactly 10 digits']
     },
+
+    isMobileVerified: {
+        type: Boolean,
+        default: false
+    },
+
     email: {
         type: String,
         required: [true, "Please enter your email "]
+    },
+
+    // isEmailVerified: {
+    //     type: Boolean,
+    //     default: false
+    // },
+
+    whatsappNumber: {
+        type: String,
+        required: [true, 'Phone number is required'],
+        match: [/^\d{10}$/, 'Phone number must be exactly 10 digits']
+    },
+
+    guardianName: {
+        type: String,
+        required: [true, "Please enter your father's Name "]
+    },
+
+    district: {
+        type: String,
+        required: [true, "Please enter your city "]
+    },
+
+    state: {
+        type: String,
+        required: [true, "Please enter your state "]
+    },
+
+    courseSelected: {
+        type: String,
+        required: [true, "Please Select Course "]
+    },
+
+    preferredCollege: {
+        type: String,
+        default: "",
+        required: [true, "Please Select Preferred College "]
+    },
+
+    source: {
+        type: String,
+        default: "",
+        required: [true, "Please enter your source "]
+    },
+
+    sourceId: {
+        type: String,
+        default: "",
+        required: [true, "Please enter source Id "]
+    },
+
+    neetScore: {
+        type: String,
+        required: [false, 'Marks are required'],
+        default: ""
+    },
+    neetAIR: {
+        type: Number,
+        required: [false, 'Rank is required'],
+        default: ""
     },
     submitedAt: {
         type: Date,
@@ -67,10 +181,10 @@ const studentDetailSchema = new mongoose.Schema(
             required: [true, "Please enter your email "]
         },
 
-        isEmailVerified: {
-            type: Boolean,
-            default: false
-        },
+        // isEmailVerified: {
+        //     type: Boolean,
+        //     default: false
+        // },
 
         whatsappNumber: {
             type: String,
@@ -78,12 +192,12 @@ const studentDetailSchema = new mongoose.Schema(
             match: [/^\d{10}$/, 'Phone number must be exactly 10 digits']
         },
 
-        fatherName: {
+        guardianName: {
             type: String,
             required: [true, "Please enter your father's Name "]
         },
 
-        city: {
+        district: {
             type: String,
             required: [true, "Please enter your city "]
         },
@@ -95,42 +209,88 @@ const studentDetailSchema = new mongoose.Schema(
 
         courseSelected: {
             type: String,
-            required: [true, "Please Selct Course "]
+            required: [true, "Please Select Course "]
         },
 
-        preffredCollege: {
+        preferredCollege: {
             type: String,
-            required: [true, "Please Selct Preffred College "]
+            default: "",
+            required: [true, "Please Select Preferred College "]
         },
 
         source: {
             type: String,
+            default: "",
             required: [true, "Please enter your source "]
         },
 
         sourceId: {
             type: String,
+            default: "",
             required: [true, "Please enter source Id "]
         },
 
         neetScore: {
-            type: Number,
-            required: [true, 'Marks are required'],
+            type: String,
+            required: [false, 'Marks are required'],
+            default: ""
         },
-        remarks: [
-            {
-                type: String,
-            }
-        ],
-        neetAir: {
-            type: Number,
+        neetAIR: {
+            type: String,
+            required: [false, 'Rank is required'],
+            default: ""
         },
-        assignedCouns: [
+        remarks: 
             {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: "Counsellor"
+
+                FollowUp1:[{
+                    type: Object,
+                subject: {
+                    type: String,
+                    required: true
+                },
+                updatedAt: { type: String },
+                default: {},
+                }],
+                FollowUp2:[{
+                    type: Object,
+                subject: {
+                    type: String,
+                    required: true
+                },
+                updatedAt: { type: String },
+                default: {},
+                }],
+                FollowUp3:[{
+                    type: Object,
+                subject: {
+                    type: String,
+                    required: true
+                },additionalOption: {
+                    type: String,
+                    required: true
+                },preBookingAmount: {
+                    type: Number,
+                    required: true
+                },
+                // pendingAmount: {
+                //     type: Number,
+                //     required: true
+                // },
+
+                updatedAt: { type: String },
+                default: {},
+                }]
             }
-        ],
+        ,
+        assignedCouns:
+
+        {
+            type: mongoose.Schema.Types.String,
+            ref: "Counsellor",
+
+            default: ""
+        },
         otherResponse: [otherResponse]
     }, { timestamps: true }
 )
